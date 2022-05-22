@@ -1,0 +1,51 @@
+{
+  "scripts": {
+    "dev:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy --serve",
+    "dev:tailwind": "npx tailwindcss -i assets/css/tailwind.css -c assets/css/tailwind.config.js -o ./_tmp/style.css --watch",
+    "build:eleventy": "ELEVENTY_ENV=dev npx @11ty/eleventy",
+    "build:tailwind": "npx tailwindcss -i assets/css/tailwind.css -c assets/css/tailwind.config.js -o ./_tmp/style.css",
+    "minify:eleventy": "ELEVENTY_ENV=prod npx @11ty/eleventy",
+    "minify:tailwind": "npx tailwindcss -i assets/css/tailwind.css -c assets/css/tailwind.config.js -o ./_tmp/style.css --minify",
+    "build": "NODE_ENV=dev npm-run-all build:tailwind build:eleventy",
+    "minify": "NODE_ENV=production npm-run-all minify:tailwind minify:eleventy",
+    "start": "npm-run-all --parallel dev:*"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "@builder.io/partytown": "^0.5.0",
+    "@fullhuman/postcss-purgecss": "^4.1.3",
+    "@tailwindcss/typography": "^0.5.2",
+    "@tannerhodges/snap-slider": "^2.0.3",
+    "alpinejs": "^3.7.0",
+    "autoprefixer": "^10.2.3",
+    "brotli-cli": "^1.0.3",
+    "html-minifier": "^4.0.0",
+    "hyperscript.org": "^0.9.5",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.12",
+    "postcss-cli": "^9.1.0",
+    "postcss-import": "^14.1.0",
+    "tailwindcss": "^3.0.0"
+  },
+  "name": "11up",
+  "description": "A starter repository showing how to build a website with the [Eleventy](https://www.11ty.dev), [Tailwind CSS](https://tailwindcss.com), and [Alpine.js](https://alpinejs.dev).",
+  "version": "1.0.0",
+  "main": ".eleventy.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woodcock3/11up.git"
+  },
+  "keywords": [
+    "Eleventy",
+    "11ty",
+    "Tailwind",
+    "Alpine",
+    "Starter"
+  ],
+  "author": "woodcock3",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/woodcock3/11up/issues"
+  },
+  "homepage": "https://github.com/woodcock3/11up#readme"
+}
